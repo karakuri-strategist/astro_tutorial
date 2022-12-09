@@ -1,4 +1,18 @@
 ---
+const pageTitle = "This is MY Place Bitch";
+const identity = {
+  firstName: "Alec Featherston",
+  country: "THE USA",
+  occupation: "Compulsive Writer",
+  hobbies: ["writing", "thinking", "poetry", "philosophy", "jotting down my thoughts"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Writing", "Pontificating", "Wasting Time"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
 ---
 
 <html lang="en">
@@ -15,8 +29,28 @@
 
 	<body>
 		<h1>Welcome to My Domain</h1>
-        <h2>This is MY Place Bitch</h2>
+        <h2>{pageTitle}</h2>
         <p>Listen, this is what we're going to do.</p>
         <p>We're going to make a motherfucking website.</p>
+
+        <p>Here are a few facts about me:</p>
+        <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 && 
+            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+        } 
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
 	</body>
 </html>
