@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Tags from "../components/Tags.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -7,5 +8,8 @@ const { frontmatter } = Astro.props;
     <p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
 
     <p>Written by {frontmatter.author}</p>
+
+    <Tags tags={frontmatter.tags} />
+
     <slot />
 </BaseLayout>

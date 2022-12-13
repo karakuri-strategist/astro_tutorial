@@ -1,10 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting.svelte";
 import "../styles/global.css"
 const pageTitle = "Welcome to My Domain";
+const messages = ["Wazzup!", "What are you doing here!?!", "Oh, Hey!"];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Greeting client:load messages={messages} />
   <p>
     Hello, welcome to my website, Spiritual Trickster. This is my space to share my poetry,
     my personal life, little stories, pontification, philosophy, and generally speaking be an exhibitionist on the internet.
